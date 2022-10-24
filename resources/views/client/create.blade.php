@@ -1,5 +1,5 @@
 
-@extends('layout.main')
+@extends('layouts.main')
 @section('content')
 
 <form action="/insertclient" method="post" enctype="multipart/form-data">

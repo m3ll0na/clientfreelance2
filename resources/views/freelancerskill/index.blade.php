@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layouts.main')
 @section('content')
     
 <a class="btn btn-primary btn-sm" href="/createfreelancerskill" role="button">add freelancerskill</a>

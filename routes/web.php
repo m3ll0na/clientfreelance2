@@ -2,8 +2,11 @@
 
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\FreelancerController;
 use App\Http\Controllers\FreelancerSlotController;
 use App\Http\Controllers\FreelancerSkillController;
@@ -19,13 +22,10 @@ use App\Http\Controllers\FreelancerSkillController;
 |
 */
 
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('layout.main');
-});
 
 
 //client
@@ -67,3 +67,9 @@ Route::post('/insertskill',[SkillController::class,'store']);
 Route::get('/editskill/{id}',[SkillController::class,'edit']);
 Route::post('/updateskill/{id}',[SkillController::class,'update']);
 Route::get('/deleteskill/{id}',[SkillController::class,'destroy']);
+
+
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/dashboard',[DashboardController::class,'index']);

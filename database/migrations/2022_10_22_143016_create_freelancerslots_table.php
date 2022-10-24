@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('id_client');
             $table->string('status');
             $table->string('location');
+            $table->timestamps();
+            $table->timestamps();
             $table->string('description');
             $table->timestamps();
         });

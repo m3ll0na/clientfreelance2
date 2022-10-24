@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layouts.main')
 @section('content')
 
 <form action="/insertfreelancerslot" method="post" enctype="multipart/form-data">
@@ -49,6 +49,16 @@
             <div class="mb-8">
                 <label  class="form-label">location</label>
                 <input type="text" class="form-control" name="location" required>
+            </div>
+
+            <div class="mb-8">
+                <label  class="form-label">startDateTime</label>
+                <input type="text" class="form-control" name="startDateTime" required>
+            </div>
+
+            <div class="mb-8">
+                <label  class="form-label">endDateTime</label>
+                <input type="text" class="form-control" name="endDateTime" required>
             </div>
 
             <div class="mb-8">

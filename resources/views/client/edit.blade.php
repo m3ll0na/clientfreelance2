@@ -1,5 +1,5 @@
 
-@extends('layout.main')
+@extends('layouts.main')
 @section('content')
 
 <form method="post" action="/updateclient/{{$client->id}}">

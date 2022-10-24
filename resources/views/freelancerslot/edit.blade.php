@@ -1,5 +1,5 @@
 
-@extends('layout.main')
+@extends('layouts.main')
 @section('content')
 
 <form method="post" action="/updatefreelancer/{{$freelancerslot->id}}">
@@ -41,6 +41,16 @@
 <div class="form-floating mb-3">
     <input type="text" class="form-control" name="location" value="{{$freelancerslot->location}}"  id="floatingInput">
     <label for="floatingInput">location</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" name="location" value="{{$freelancerslot->startDateTime}}"  id="floatingInput">
+    <label for="floatingInput">startDateTime</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" name="location" value="{{$freelancerslot->endDateTime}}"  id="floatingInput">
+    <label for="floatingInput">endDateTime</label>
   </div>
 
   <div class="form-floating mb-3">

@@ -43,6 +43,8 @@ class FreelancerSlotController extends Controller
         $data->id_client = $request->id_client;
         $data->status = $request->status;
         $data->location = $request->location;
+        $data->startDateTime = $request->startDateTime;
+        $data->endDateTime = $request->endDateTime;
         $data->description = $request->description;
         $data->id = $request->id;
 
@@ -87,6 +89,8 @@ class FreelancerSlotController extends Controller
         $data->id_client = $request->id_client;
         $data->status = $request->status;
         $data->location = $request->location;
+        $data->startDateTime = $request->startDateTime;
+        $data->endDateTime = $request->endDateTime;
         $data->description = $request->description;
         $data->id = $request->id;
 

@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layouts.main')
 @section('content')
     
 <a class="btn btn-primary btn-sm" href="/createfreelancerslot" role="button">add freelancerslot</a>
@@ -17,6 +17,8 @@
           <th>id_client</th>
           <th>status</th>
           <th>location</th>
+          <th>startDateTime</th>
+          <th>endDateTime</th>
           <th>description</th>
           <th>action</th>
         </tr>
@@ -33,6 +35,8 @@
                 <td>{{$row->client->name ?? null}}</td>
                 <td>{{$row->status ?? null }}  </td>
                 <td>{{$row->location ?? null }}  </td>
+                <td>{{$row->startDateTime ?? null }}  </td>
+                <td>{{$row->endDateTime ?? null }}  </td>
                 <td>{{$row->description ?? null }}  </td>
                 <td>{{$row->action ?? null }}  </td>
                 <td>
