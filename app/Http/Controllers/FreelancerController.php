@@ -40,6 +40,7 @@ class FreelancerController extends Controller
     {
         $data = new Freelancer;
         $data->name = $request->name;
+        $data->profile_image = $request->profile_image;
         $data->description = $request->description;
         $data->address = $request->address;
         $data->email = $request->email;
@@ -48,6 +49,8 @@ class FreelancerController extends Controller
         $data->accountBank = $request->accountBank;
         $data->hourlyWage = $request->hourlyWage;
         $data->id = $request->id;
+
+        $data->profile_image = $request->profile_image;
 
         $data ->save();
         return redirect()->route('freelancer')->with('Success', 'Freelancer has been updated successfully.');
@@ -87,6 +90,7 @@ class FreelancerController extends Controller
     {
         $data = Freelancer::find($id);
         $data->name = $request->name;
+        $data->profile_image = $request->profile_image;
         $data->description = $request->description;
         $data->address = $request->address;
         $data->email = $request->email;

@@ -22,11 +22,20 @@ use App\Http\Controllers\FreelancerSkillController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
+Route::get('/', function () {
+    return view('landingpage');
+});
 
+//freelancerskill
+Route::get('/freelancerskill',[FreelancerSkillController::class,'index'])->name('freelancerskill');
+Route::get('/freelancerskill/search',[FreelancerSkillController::class,'search'])->name('freelancerskill');
+
+//freelancer
+Route::get('/freelancer',[FreelancerController::class,'index'])->name('freelancer');
 
 //client
 Route::get('/client',[ClientController::class,'index'])->name('client');
@@ -36,14 +45,6 @@ Route::get('/editclient/{id}',[ClientController::class,'edit']);
 Route::post('/updateclient/{id}',[ClientController::class,'update']);
 Route::get('/deleteclient/{id}',[ClientController::class,'destroy']);
 
-//freelancer
-Route::get('/freelancer',[FreelancerController::class,'index'])->name('freelancer');
-Route::get('/createfreelancer',[FreelancerController::class,'create']);
-Route::post('/insertfreelancer',[FreelancerController::class,'store']);
-Route::get('/editfreelancer/{id}',[FreelancerController::class,'edit']);
-Route::post('/updatefreelancer/{id}',[FreelancerController::class,'update']);
-Route::get('/deletefreelancer/{id}',[FreelancerController::class,'destroy']);
-
 //freelancerslot
 Route::get('/freelancerslot',[FreelancerSlotController::class,'index'])->name('freelancerslot');
 Route::get('/createfreelancerslot',[FreelancerSlotController::class,'create']);
@@ -52,22 +53,8 @@ Route::get('/editfreelancerslot/{id}',[FreelancerSlotController::class,'edit']);
 Route::post('/updatefreelancerslot/{id}',[FreelancerSlotController::class,'update']);
 Route::get('/deletefreelancerslot/{id}',[FreelancerSlotController::class,'destroy']);
 
-//freelancerskill
-Route::get('/freelancerskill',[FreelancerSkillController::class,'index'])->name('freelancerskill');
-Route::get('/createfreelancerskill',[FreelancerSkillController::class,'create']);
-Route::post('/insertfreelancerskill',[FreelancerSkillController::class,'store']);
-Route::get('/editfreelancerskill/{id}',[FreelancerSkillController::class,'edit']);
-Route::post('/updatefreelancerskill/{id}',[FreelancerSkillController::class,'update']);
-Route::get('/deletefreelancerskill/{id}',[FreelancerSkillController::class,'destroy']);
-
 //skill
 Route::get('/skill',[SkillController::class,'index'])->name('skill');
-Route::get('/createskill',[SkillController::class,'create']);
-Route::post('/insertskill',[SkillController::class,'store']);
-Route::get('/editskill/{id}',[SkillController::class,'edit']);
-Route::post('/updateskill/{id}',[SkillController::class,'update']);
-Route::get('/deleteskill/{id}',[SkillController::class,'destroy']);
-
 
 Auth::routes();
 

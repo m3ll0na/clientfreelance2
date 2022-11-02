@@ -23,17 +23,6 @@
 </head>
   <body>
     
-    <div class="list-group">
-      <a href="/" class="list-group-item list-group-item-action active" aria-current="true">
-        Home
-      </a>
-      <a href="/client" class="list-group-item list-group-item-action">client</a>
-      <a href="/freelancer" class="list-group-item list-group-item-action">freelancer</a>
-      <a href="/freelancerskill" class="list-group-item list-group-item-action">freelancerskill</a>
-      <a href="/freelancerslot" class="list-group-item list-group-item-action">freelancerslot</a>
-      <a href="/skill" class="list-group-item list-group-item-action">skill</a>
-    </div>
-
   <div class="container-fluid">
     <div class="row mt-7 justify-content-center">
         <div class="col-md-11">

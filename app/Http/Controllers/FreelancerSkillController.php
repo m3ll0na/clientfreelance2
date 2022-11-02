@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\FreelancerSkillController;
 use App\Models\FreelancerSkill;
+use Illuminate\Support\Facades\DB;
 
 class FreelancerSkillController extends Controller
 {
@@ -16,93 +17,22 @@ class FreelancerSkillController extends Controller
      */
     public function index()
     {
-        $freelancerskill = Freelancerskill::get();
-        return view('freelancerskill.index',compact('freelancerskill'));
+        $freelancerskill = DB::table('freelancer_skills')->paginate(10);
+
+        return view('freelancerskill.index',['freelancerskill' => $freelancerskill]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('freelancerskill.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $data = new FreelancerSkill;
-        $data->freelancer_id = $request->freelancer_id;
-        $data->skill_id = $request->skill_id;
-        $data->description = $request->description;
-        $data->rate = $request->rate;
-        $data->id = $request->id;
-
-        $data ->save();
-        return redirect()->route('freelancerskill')->with('Success', 'Freelancerskill has been updated successfully.');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $freelancerskill = FreelancerSkill::findOrFail($id);
-        return view('freelancerskill.edit',compact('freelancerskill'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $data = FreelancerSkill::find($id);
-        $data->freelancer_id = $request->freelancer_id;
-        $data->skill_id = $request->skill_id;
-        $data->description = $request->description;
-        $data->rate = $request->rate;
-        $data->id = $request->id;
-
-        $data ->save();
-        return redirect()->route('freelancerskill')->with('Success', 'Freelancerskill has been updated successfully.');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $data = FreelancerSkill::find($id);
-        $data->delete();
-        return redirect()->route('freelancerslot')->with('success', 'Freelancerslot has been delete successfully.');
     
+    public function search(Request $request)
+
+	{
+        $search = $request->input('search');
+
+        $freelancerskill = DB::table('freelancer_skills')
+        ->Where('skill_id','like',"%.$search.%")
+        ->orWhere('freelancer_id','like',"%.$search.%")
+        ->get();
+
+        return view('freelancerskill.index',['freelancerskill' => $freelancerskill]);
+
     }
-}
+};
