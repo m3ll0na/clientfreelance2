@@ -22,8 +22,8 @@ use App\Http\Controllers\FreelancerSkillController;
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
+Route::get('/main', function () {
+    return view('layouts.main');
 });
 
 Route::get('/', function () {
