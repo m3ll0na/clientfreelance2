@@ -1,6 +1,7 @@
-@extends('layouts.main')
+@extends('layouts.navbar')
 
 <section style="background-color: #eee;">
+  <br>
   <div class="container py-5">
     <div class="row">
       <div class="col">
@@ -13,48 +14,51 @@
       </div>
     </div>
 
+
+<!--Freelancer Snippet-->
+
     <div class="row">
       <div class="col-lg-4">
         <div class="card mb-4">
           <div class="card-body text-center">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar"
               class="rounded-circle img-fluid" style="width: 150px;">
             <h5 class="my-3">James</h5>
             <p class="text-muted mb-1">Logo Designer</p>
             <p class="text-muted mb-4">2 years experience logo design for corporate and events</p>
-            <div class="d-flex justify-content-center mb-2">
-              <button type="button" class="btn btn-primary">Follow</button>
-              <button type="button" class="btn btn-outline-primary ms-1">Message</button>
-            </div>
+            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+              <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
+              <p class="mb-0">James Design</p>
+            </li>
           </div>
         </div>
+
+
+<!--Booking Hours-->
+
         <div class="card mb-4 mb-lg-0">
           <div class="card-body p-0">
             <ul class="list-group list-group-flush rounded-3">
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fas fa-globe fa-lg text-warning"></i>
-                <p class="mb-0">https://mdbootstrap.com</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fab fa-github fa-lg" style="color: #333333;"></i>
-                <p class="mb-0">mdbootstrap</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
-                <p class="mb-0">@mdbootstrap</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
-                <p class="mb-0">mdbootstrap</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-                <p class="mb-0">mdbootstrap</p>
-              </li>
-            </ul>
-          </div>
+          
+              <div class="card bg-c-blue order-card">
+                <div class="card-block text-center">
+                  <br>
+                    <h6 class="m-b-20">Booking Hours Received</h6>
+                    <h2 class="text-right"><i class="fa-solid fa-cart-shopping"></i></i>&nbsp<span>30</span></h2>
+                    <br>
+                    <h6 class="m-b-20">Completed Orders</h6>
+                    <h2 class="text-right"><i class="fa-regular fa-circle-check"></i></i>&nbsp<span>30</span></h2>
+                <br>
+                  </div>
+            </div>
+          </ul>
         </div>
       </div>
+    </div>
+
+
+<!--Freelancer Field-->
+
       <div class="col-lg-8">
         <div class="card mb-4">
           <div class="card-body">
@@ -72,7 +76,7 @@
                 <p class="mb-0">Email</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">example@example.com</p>
+                <p class="text-muted mb-0">james@domain.com</p>
               </div>
             </div>
             <hr>
@@ -81,7 +85,7 @@
                 <p class="mb-0">Address</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">(097) 234-5678</p>
+                <p class="text-muted mb-0">Kota Kinabalu, Sabah</p>
               </div>
             </div>
             <hr>
@@ -90,84 +94,84 @@
                 <p class="mb-0">Mobile</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">(098) 765-4321</p>
+                <p class="text-muted mb-0">01127406137</p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Account Details</p>
+                <p class="mb-0">Account Number</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                <p class="text-muted mb-0">****733622479345</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Account Bank</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">CIMB</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Rate Per Hour<br>(RM)</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">70</p>
               </div>
             </div>
             
+
+<!--Booking History-->
+
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-14">
             <div class="card mb-4 mb-md-0">
               <div class="card-body">
-                <p class="mb-4"><span class="text-primary font-italic me-1">Booking Hours</span> Monthly
-                </p>
-                <p class="mb-1" style="font-size: .77rem;">Web Design</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
-                    aria-valuemin="0" aria-valuemax="100"></div>
+                <table class="table">
+                  <thead>
+                    <h5>Booking History</h5>
+                    <tr>
+                      <th scope="col">Job</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Time Slot</th>
+                      <th scope="col">Location</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Logo design</td>
+                      <td><button type="button" class="btn btn-primary btn-sm">10am</button>&nbsp;<button type="button" class="btn btn-primary btn-sm">11am</button></td>
+                      <td>Kota Kinabalu, Sabah</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Logo design</td>
+                      <td><button type="button" class="btn btn-primary btn-sm">10am</button>&nbsp;<button type="button" class="btn btn-primary btn-sm">11am</button></td>
+                      <td>Kota Kinabalu, Sabah</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+
+<!--Call or book-->
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <a href="#"></a><button class="btn btn-outline-primary" type="button">Call</button>
+                  <a href="/freelancerslot" <button class="btn btn-primary me-md-2" type="button">Book</button></a>
                 </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
-                <div class="progress rounded mb-2" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
-                    aria-valuemin="0" aria-valuemax="100"></div>
+
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="card mb-4 mb-md-0">
-              <div class="card-body">
-                <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
-                </p>
-                <p class="mb-1" style="font-size: .77rem;">Web Design</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
-                <div class="progress rounded mb-2" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
-                    aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
             </div>

@@ -1,7 +1,9 @@
-@extends('layouts.main')
+@extends('layouts.navbar')
 @section('content')
     
-<a class="btn btn-primary btn-sm" href="/createclient" role="button">add client</a>
+<br><br><br><br>
+<a class="btn btn-primary btn-sm" href="/createclient" role="button">Add Client Detail</a><br><br>
+
 
 <div class="card">
     <div class="card-header">

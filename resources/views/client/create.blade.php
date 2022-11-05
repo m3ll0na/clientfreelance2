@@ -1,10 +1,11 @@
 
-@extends('layouts.main')
+@extends('layouts.navbar')
 @section('content')
 
 <form action="/insertclient" method="post" enctype="multipart/form-data">
     @csrf
 
+<br><br><br><br>
 <div class="form-floating mb-3">
   <input type="text" class="form-control" name="name" id="floatingInput">
   <label for="floatingInput">name</label>

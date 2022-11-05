@@ -28,6 +28,9 @@
   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 </div>
 
+
+<!--Search-->
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 <div class="container">
     <br/>
@@ -54,6 +57,8 @@
                     </div>
 </div>
 
+<!--FreelancerProfile-->
+
 <div class="container">
 <div class="row ng-scope">
     <div class="col-md-3 col-md-push-9">
@@ -67,13 +72,13 @@
             <div class="search-result-item-body">
                 <div class="row">
                     <div class="col-sm-9">
-                        <h4 class="search-result-item-heading"><a href="#">john doe</a></h4>
-                        <p class="info">New York, NY 20188</p>
+                        <h4 class="search-result-item-heading"><a href="#">James</a></h4>
+                        <p class="info">Kota Kinabalu,Sabah</p>
                         <p class="description">Not just usual Metro. But something bigger. Not just usual widgets, but real widgets. Not just yet another admin template, but next generation admin template.</p>
                     </div>
                     <div class="col-sm-3 text-align-center">
                         <p class="value3 mt-sm">$9, 700</p>
-                        <p class="fs-mini text-muted">PER WEEK</p><a class="btn btn-primary btn-info btn-sm" href="#">Learn More</a>
+                        <p class="fs-mini text-muted">PER WEEK</p><a class="btn btn-primary btn-info btn-sm" href="/freelancer">Check Profile</a>
                     </div>
                 </div>
             </div>
@@ -129,6 +134,10 @@
                 </div>
             </div>
         </section>
+
+
+<!--Pagination-->
+
         <div class="text-align-center">
             <ul class="pagination pagination-sm">
                 <li class="disabled"><a href="#">Prev</a>
@@ -150,6 +159,9 @@
     </div>
 </div>
 </div>
+
+
+<!--CSS-->
 
 <style type="text/css">
 body{margin-top:40px;

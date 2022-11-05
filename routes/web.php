@@ -37,6 +37,12 @@ Route::get('/freelancerskill/search',[FreelancerSkillController::class,'search']
 //freelancer
 Route::get('/freelancer',[FreelancerController::class,'index'])->name('freelancer');
 
+//freelancerslot
+Route::get('/freelancerslot',[FreelancerSlotController::class,'index'])->name('freelancerslot');
+
+
+//bookingsuccess
+
 //client
 Route::get('/client',[ClientController::class,'index'])->name('client');
 Route::get('/createclient',[ClientController::class,'create']);
@@ -45,16 +51,6 @@ Route::get('/editclient/{id}',[ClientController::class,'edit']);
 Route::post('/updateclient/{id}',[ClientController::class,'update']);
 Route::get('/deleteclient/{id}',[ClientController::class,'destroy']);
 
-//freelancerslot
-Route::get('/freelancerslot',[FreelancerSlotController::class,'index'])->name('freelancerslot');
-Route::get('/createfreelancerslot',[FreelancerSlotController::class,'create']);
-Route::post('/insertfreelancerslot',[FreelancerSlotController::class,'store']);
-Route::get('/editfreelancerslot/{id}',[FreelancerSlotController::class,'edit']);
-Route::post('/updatefreelancerslot/{id}',[FreelancerSlotController::class,'update']);
-Route::get('/deletefreelancerslot/{id}',[FreelancerSlotController::class,'destroy']);
-
-//skill
-Route::get('/skill',[SkillController::class,'index'])->name('skill');
 
 Auth::routes();
 
