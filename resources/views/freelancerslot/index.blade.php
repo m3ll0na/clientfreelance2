@@ -1,3 +1,7 @@
+@extends('layouts.navbar')
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,10 +12,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
 
-    
-
+  
     <link rel="stylesheet" href="calendar-11/fonts/icomoon/style.css">
-    
     <link rel="stylesheet" href="calendar-11/css/default.css">
     <link rel="stylesheet" href="calendar-11/css/default.date.css">
 
@@ -21,31 +23,27 @@
     <!-- Style -->
     <link rel="stylesheet" href="calendar-11/css/style.css">
 
-    <title>Booking Date</title>
+    <title>Freelancer Slot</title>
   </head>
   <body>
-  
 
   <div class="content">
-    
-    <div class="container text-left">
+    <div class="container text-center">
       <div class="row justify-content-center">
-        <div class="col-lg-3">
-          <h2 class="mb-5 text-center">Pick a date and book!</h2>
+        <div class="col-lg-5">
+          <h2 class="mb-5 text-center">Freelancer Schedule</h2>
           <form action="#">
             <div class="form-group">
-              <input type="text" class="form-control" id="pick-date" placeholder="Pick A Date" >
+              <input type="text" class="form-control text-center" id="pick-date" placeholder="Pick A Date" >
 
-              <div class="list-group">
-                <a href="/client" class="list-group-item list-group-item-action active" aria-current="true">
-                  9.00am - 10.00am
-                </a>
-                <a href="/client" class="list-group-item list-group-item-action disabled">10.00am -11.00am</a>
-                <a href="/client" class="list-group-item list-group-item-action active"><button class="btn btn-primary me-md-2" type="button">11.00am - 12.00noon slot</button></a>
-                <a href="/client" class="list-group-item list-group-item-action active"><button class="btn btn-primary me-md-2" type="button">1.00pm - 2.00pm slot</button></a>
-                <a href="/client" class="list-group-item list-group-item-action active"><button class="btn btn-primary me-md-2" type="button">2.00pm - 3.00pm slot</button></a>
-                <a href="/client" class="list-group-item list-group-item-action active"><button class="btn btn-primary me-md-2" type="button">3.00pm - 4.00pm</button></a>
-                <a href="#" class="list-group-item list-group-item-action disabled">4.00pm -5.00pm</a>
+              <div class="form-group">
+                <a href="/client" class="list-group-item list-group-item-action active" aria-current="true">9.00am - 10.00am slot</a>
+                <a href="#" class="list-group-item list-group-item-action active"><button class="btn btn-primary me-md-2" type="button">10.00am - 11.00noon slot</button></a>
+                <a href="#" class="list-group-item list-group-item-action active"><button class="btn btn-primary me-md-2" type="button">11.00am - 12.00noon slot</button></a>
+                <a href="#" class="list-group-item list-group-item-action active"><button class="btn btn-primary me-md-2" type="button">1.00pm - 2.00pm slot</button></a>
+                <a href="#" class="list-group-item list-group-item-action active"><button class="btn btn-primary me-md-2" type="button">2.00pm - 3.00pm slot</button></a>
+                <a href="#" class="list-group-item list-group-item-action active"><button class="btn btn-primary me-md-2" type="button">3.00pm - 4.00pm slot</button></a>
+                <a href="#" class="list-group-item list-group-item-action disabled">4.00pm -5.00pm slot</a>
               </div>
         
             </div>
@@ -56,8 +54,6 @@
     </div>
   </div>
     
-    
-
     <script src="calendar-11/js/jquery-3.3.1.min.js"></script>
     <script src="calendar-11/js/popper.min.js"></script>
     <script src="calendar-11/js/bootstrap.min.js"></script>

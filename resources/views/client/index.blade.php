@@ -2,54 +2,66 @@
 @section('content')
     
 <br><br><br><br>
-<a class="btn btn-primary btn-sm" href="/createclient" role="button">Add Client Detail</a><br><br>
+<a class="btn btn-primary btn-sm" href="/createclient" role="button">Fill Client Details</a><br><br>
 
-
-<div class="card">
-    <div class="card-header">
-      <h3 class="card-title">Client</h3>
-    </div>
-    <!-- /.card-header -->
+<div class="col-lg-8">
+  <div class="card mb-4">
     <div class="card-body">
-      <table id="example1" class="table table-bordered table-striped">
-        <thead>
-        <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>description</th>
-          <th>address</th>
-          <th>email</th>
-          <th>phoneNumber</th>
-          <th>action</th>
-        </tr>
-        </thead>
-        <tbody>
-
-          @php
-              $no = 1
-          @endphp
-          @foreach ( $client as $row )
-            <tr>
-                <td>{{ $no++ }}</td>
-                <td>  {{ $row->name ?? null }}  </td>
-                <td>  {{ $row->description ?? null }}  </td>
-                <td>  {{ $row->address ?? null }}  </td>
-                <td>  {{ $row->email ?? null }}  </td>
-                <td>  {{ $row->phoneNumber ?? null }}  </td>
-                <td>
-                    <a href="/editclient/{{$row->id}}" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square fa-xs"></i></a>
-
-                    <a href="/deleteclient/{{$row->id}}" class="btn btn-outline-danger"><i
-                      class="fa-solid fa-trash fa-xs"></i></a>
-                </td>
-            </tr>
-            @endforeach
-
-        </tbody>
-        
-    </table>
-  </div>
-  <!-- /.card-body -->
-</div>
+      <div class="row">
+        <div class="col-sm-3">
+          <p class="mb-0">Name</p>
+        </div>
+        <div class="col-sm-9">
+          <p class="text-muted mb-0"></p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <p class="mb-0">Job Description</p>
+        </div>
+        <div class="col-sm-9">
+          <p class="text-muted mb-0"></p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <p class="mb-0">Address</p>
+        </div>
+        <div class="col-sm-9">
+          <p class="text-muted mb-0"></p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <p class="mb-0">Email</p>
+        </div>
+        <div class="col-sm-9">
+          <p class="text-muted mb-0"></p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <p class="mb-0">Phone Number</p>
+        </div>
+        <div class="col-sm-9">
+          <p class="text-muted mb-0"></p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <p class="mb-0">Total Job Hours</p>
+        </div>
+        <div class="col-sm-9">
+          <p class="text-muted mb-0"></p>
+        </div>
+      </div>
+      <hr>
+      <a class="btn btn-primary btn-sm" href="#" role="button">Submit</a><br><br>
+    </div>
 
 @endsection

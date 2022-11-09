@@ -30,6 +30,13 @@ Route::get('/', function () {
     return view('landingpage');
 });
 
+//this is for booking form - weekly view.
+
+Route::get('/test', function () {
+    return view('test');
+});
+
+
 //freelancerskill
 Route::get('/freelancerskill',[FreelancerSkillController::class,'index'])->name('freelancerskill');
 Route::get('/freelancerskill/search',[FreelancerSkillController::class,'search'])->name('freelancerskill');
@@ -39,7 +46,6 @@ Route::get('/freelancer',[FreelancerController::class,'index'])->name('freelance
 
 //freelancerslot
 Route::get('/freelancerslot',[FreelancerSlotController::class,'index'])->name('freelancerslot');
-
 
 //bookingsuccess
 

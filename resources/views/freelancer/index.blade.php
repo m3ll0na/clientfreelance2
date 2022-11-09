@@ -146,14 +146,14 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">1</th>
-                      <td>Logo design</td>
+                      <th scope="row">Logo Design</th>
+                      <td>1 Nov</td>
                       <td><button type="button" class="btn btn-primary btn-sm">10am</button>&nbsp;<button type="button" class="btn btn-primary btn-sm">11am</button></td>
                       <td>Kota Kinabalu, Sabah</td>
                     </tr>
                     <tr>
-                      <th scope="row">2</th>
-                      <td>Logo design</td>
+                      <th scope="row">Logo Design</th>
+                      <td>3 Nov</td>
                       <td><button type="button" class="btn btn-primary btn-sm">10am</button>&nbsp;<button type="button" class="btn btn-primary btn-sm">11am</button></td>
                       <td>Kota Kinabalu, Sabah</td>
                     </tr>
