@@ -43,6 +43,7 @@ Route::get('/freelancerskill/search',[FreelancerSkillController::class,'search']
 
 //freelancer
 Route::get('/freelancer',[FreelancerController::class,'index'])->name('freelancer');
+Route::get('/freelancer/{id}',[FreelancerController::class,'show'])->name('freelancerInfo');
 
 //freelancerslot
 Route::get('/freelancerslot',[FreelancerSlotController::class,'index'])->name('freelancerslot');

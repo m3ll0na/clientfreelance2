@@ -66,24 +66,26 @@
     <div class="col-md-9 col-md-pull-3">
         <p class="search-results-count">About 94 700 000 (0.39 sec.) results</p>
         <a href="#">Back To Search</a>
+        @foreach ($freelancers as $freelancer)
         <section class="search-result-item">
-            <a class="image-link" href="#"><img class="image" src="https://bootdey.com/img/Content/avatar/avatar1.png">
+            <a class="image-link" href="#"><img class="image" src="{{ $freelancer->profile_image }}">
             </a>
             <div class="search-result-item-body">
                 <div class="row">
                     <div class="col-sm-9">
-                        <h4 class="search-result-item-heading"><a href="#">James</a></h4>
+                        <h4 class="search-result-item-heading"><a href="#">{{ $freelancer->name }}</a></h4>
                         <p class="info">Kota Kinabalu,Sabah</p>
-                        <p class="description">Not just usual Metro. But something bigger. Not just usual widgets, but real widgets. Not just yet another admin template, but next generation admin template.</p>
+                        <p class="description">{{ $freelancer->description }}</p>
                     </div>
                     <div class="col-sm-3 text-align-center">
-                        <p class="value3 mt-sm">$9, 700</p>
-                        <p class="fs-mini text-muted">PER WEEK</p><a class="btn btn-primary btn-info btn-sm" href="/freelancer">Check Profile</a>
+                        <p class="value3 mt-sm">RM{{ $freelancer->hourlyWage }}</p>
+                        <p class="fs-mini text-muted">Per Hour</p><a class="btn btn-primary btn-info btn-sm" href="/freelancer/{{ $freelancer->id }}">Check Profile</a>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="search-result-item">
+        @endforeach
+        <!-- <section class="search-result-item">
             <a class="image-link" href="#"><img class="image" src="https://bootdey.com/img/Content/avatar/avatar6.png">
             </a>
             <div class="search-result-item-body">
@@ -133,7 +135,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
 
 <!--Pagination-->

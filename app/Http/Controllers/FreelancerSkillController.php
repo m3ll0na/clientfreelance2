@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\FreelancerSkillController;
 use App\Models\FreelancerSkill;
+use App\Models\Freelancer;
 use Illuminate\Support\Facades\DB;
 
 class FreelancerSkillController extends Controller
@@ -27,12 +28,9 @@ class FreelancerSkillController extends Controller
 	{
         $search = $request->input('search');
 
-        $freelancerskill = DB::table('freelancer_skills')
-        ->Where('skill_id','like',"%.$search.%")
-        ->orWhere('freelancer_id','like',"%.$search.%")
-        ->get();
+        $freelancers = Freelancer::get();
 
-        return view('freelancerskill.index',['freelancerskill' => $freelancerskill]);
+        return view('freelancerskill.index',['freelancers' => $freelancers]);
 
     }
 };

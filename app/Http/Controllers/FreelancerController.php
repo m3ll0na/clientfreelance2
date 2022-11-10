@@ -16,8 +16,8 @@ class FreelancerController extends Controller
      */
     public function index()
     {
-        $freelancer = Freelancer::get();
-        return view('freelancer.index',compact('freelancer'));
+        $freelancers = Freelancer::get();
+        return view('freelancer.index',['freelancers' => $freelancers]);
     }
 
     /**
@@ -65,6 +65,9 @@ class FreelancerController extends Controller
     public function show($id)
     {
         //
+        $freelancer = Freelancer::where('id',$id)
+            ->first();
+        return view('freelancer.show',['freelancer' => $freelancer]);
     }
 
     /**

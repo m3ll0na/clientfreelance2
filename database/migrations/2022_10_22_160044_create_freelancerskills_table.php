@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('freelancerskills', function (Blueprint $table) {
+        Schema::create('freelancer_skills', function (Blueprint $table) {
             $table->id();
             $table->string('freelancer_id');
             $table->string('skill_id');
