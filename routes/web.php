@@ -36,6 +36,10 @@ Route::get('/test', function () {
     return view('test');
 });
 
+Route::get('/test2', function () {
+    return view('test2'); 
+});
+
 
 //freelancerskill
 Route::get('/freelancerskill',[FreelancerSkillController::class,'index'])->name('freelancerskill');
@@ -43,11 +47,14 @@ Route::get('/freelancerskill/search',[FreelancerSkillController::class,'search']
 
 //freelancer
 Route::get('/freelancer',[FreelancerController::class,'index'])->name('freelancer');
+Route::get('/freelancer1',[FreelancerController::class,'oldindex'])->name('freelancer');
+Route::get('/createfreelancer',[FreelancerController::class,'create']);
+Route::post('/insertfreelancer',[FreelancerController::class,'store']);
+Route::get('/editfreelancer/{id}',[FreelancerController::class,'edit']);
+Route::post('/updatefreelancer/{id}',[FreelancerController::class,'update']);
 
 //freelancerslot
 Route::get('/freelancerslot',[FreelancerSlotController::class,'index'])->name('freelancerslot');
-
-//bookingsuccess
 
 //client
 Route::get('/client',[ClientController::class,'index'])->name('client');
@@ -56,6 +63,21 @@ Route::post('/insertclient',[ClientController::class,'store']);
 Route::get('/editclient/{id}',[ClientController::class,'edit']);
 Route::post('/updateclient/{id}',[ClientController::class,'update']);
 Route::get('/deleteclient/{id}',[ClientController::class,'destroy']);
+
+//bookingsent
+Route::get('/sent', function () {
+    return view('sent'); 
+});
+
+//successbooking
+Route::get('/success', function () {
+    return view('success'); 
+});
+
+//failedbooking
+Route::get('/failed', function () {
+    return view('failed'); 
+});
 
 
 Auth::routes();

@@ -39,11 +39,11 @@ body {
 	z-index: 1;
 }
 .navbar .getstarted {
-	background: #106eea;
+	background: #e9ebf0;
 	margin-left: 30px;
 	border-radius: 4px;
 	font-weight: 400;
-	color: #fff;
+	color: #ca80a5;
 	text-decoration: none;
 	padding: .5rem 1rem;
 	line-height: 2.3;
@@ -76,7 +76,7 @@ body {
 	padding: 1px 5px;
 	font-size: 18px;
 	line-height: 0.3;
-	background: #fff;
+	background: rgb(119, 124, 175);
 }
 .portfolio .card {
 	box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
