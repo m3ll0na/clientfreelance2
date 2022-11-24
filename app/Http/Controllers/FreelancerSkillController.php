@@ -27,10 +27,25 @@ class FreelancerSkillController extends Controller
 
 	{
         $search = $request->input('search');
+        $page = $request->input('page');
 
-        $freelancers = Freelancer::get();
+        if($search){
+            $freelancers = Freelancer::whereHas('skills', function ($query) use ($search) {
+                $query->where('skills.description', 'like',"%$search%")
+                ->orWhere('freelancers.address','like',"%$search%")
+                ->orWhere('freelancers.description','like',"%$search%")
+                ->orWhere('freelancer_skills.description', 'like',"%$search%")
+                ->orWhere('freelancer_skills.rate', 'like',"%$search%")
+                ->orWhere('freelancers.name', 'like',"%$search%");
+            })->get();
+        }else{
+            $freelancers = Freelancer::get();
+        }
+        $freelancers->load('skills');
 
-        return view('freelancerskill.index',['freelancers' => $freelancers]);
+        return view('freelancerskill.index',[
+            'freelancers' => $freelancers,
+            'search' => $search]);
 
     }
 };

@@ -43,7 +43,9 @@
                                     </div>
                                     <!--end of col-->
                                     <div class="col">
-                                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search Skills eg: logo design, photography service">
+                                        <input class="form-control form-control-lg form-control-borderless" name="search" type="search" placeholder="Search Skills eg: logo design, photography service" 
+                                        @if (!empty($search)) value="{{ $search }}" @endif
+                                        >
                                     </div>
                                     <!--end of col-->
                                     <div class="col-auto">
@@ -72,10 +74,18 @@
             </a>
             <div class="search-result-item-body">
                 <div class="row">
-                    <div class="col-sm-9">
+                    <div class="col-sm-3">
                         <h4 class="search-result-item-heading"><a href="#">{{ $freelancer->name }}</a></h4>
                         <p class="info">Kota Kinabalu,Sabah</p>
                         <p class="description">{{ $freelancer->description }}</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <h6 class="search-result-item-heading">Skills</h6>
+                        <ol class="description">
+                            @foreach($freelancer->skills as $skill)
+                                <li>{{$skill->description}} <br/>Rate: RM{{$skill->pivot->rate}} <br/>Level: {{$skill->pivot->description}}</li>
+                            @endforeach
+                        </ol>
                     </div>
                     <div class="col-sm-3 text-align-center">
                         <p class="value3 mt-sm">RM{{ $freelancer->hourlyWage }}</p>

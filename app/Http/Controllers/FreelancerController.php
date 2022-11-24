@@ -14,9 +14,18 @@ class FreelancerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($query)
     {
         $freelancers = Freelancer::get();
+        // if($query){
+        //     $freelancers = Freelancer::whereHas('skills', function ($query) {
+        //         $query->where('skills.description', 'like',"%$query%")
+        //         ->orWhere('freelancers.address','like',"%$query%")
+        //         ->orWhere('freelancers.name', 'like',"%$query%");
+        //     })->get();
+        // }
+        // $freelancer->loads('skills');
+        // dd($freelancer);
         return view('freelancer.index',['freelancers' => $freelancers]);
     }
 
@@ -67,6 +76,7 @@ class FreelancerController extends Controller
         //
         $freelancer = Freelancer::where('id',$id)
             ->first();
+        $freelancer->load('skills','slots');
         return view('freelancer.show',['freelancer' => $freelancer]);
     }
 
