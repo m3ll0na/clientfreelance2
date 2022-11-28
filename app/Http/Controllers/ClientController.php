@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ClientController;
 use App\Models\Client; //data is coming from the database via model
+use App\Models\FreelancerSlot;
+use App\Models\Skill;
+use App\Models\Freelancer;
+use Illuminate\Database\Eloquent\Builder;
 
 class ClientController extends Controller
 {
@@ -14,10 +18,19 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $client = Client::get();
-        return view('client.index',compact('client'));
+        $freelancerSkillId = $request->freelancerSkillId;
+        $bookingDate = $request->bookingDate;
+        $slotTime = $request->slotTime;
+
+        return view('client.index',[
+            "client" => $client,
+            "freelancerSkillId" => $freelancerSkillId,
+            "bookingDate" => $bookingDate,
+            "slotTime" => $slotTime
+        ]);
     }
 
     /**
@@ -38,16 +51,37 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request);
         $data = new Client;
         $data->name = $request->name;
-        $data->description = $request->description;
-        $data->address = $request->address;
+        $data->description = $request->client_description;
+        $data->address = $request->client_address;
         $data->email = $request->email;
-        $data->phoneNumber = $request->phoneNumber;
-        $data->id = $request->id;
+        $data->phoneNumber = $request->phone;
 
-        $data ->save();
-        return redirect()->route('client')->with('Success', 'Client has been updated successfully.');
+        $data->save();
+
+        $freelancerSkillId = $request->freelancerSkillId;
+        $skill = Skill::whereHas('freelancers', function (Builder $query) use ($freelancerSkillId) {
+            $query->where('freelancer_skills.id',$freelancerSkillId);
+        })->first();
+
+        $freelancer = Freelancer::whereHas('skills', function (Builder $query) use ($freelancerSkillId) {
+            $query->where('freelancer_skills.id',$freelancerSkillId);
+        })->first();
+
+
+        $freelancerSlotData = new FreelancerSlot;
+        $freelancerSlotData->client_id = $data->id;
+        $freelancerSlotData->freelancer_id = $freelancer->id;
+        $freelancerSlotData->description = $skill->description." ".$request->job_description;
+        $freelancerSlotData->location = $request->job_location;
+        $freelancerSlotData->status = "PENDING";
+
+        $freelancerSlotData->save();
+
+
+        return "Success";
 
     }
 

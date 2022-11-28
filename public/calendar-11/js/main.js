@@ -1,5 +1,8 @@
 $(function() {
 
-   $('#pick-date').pickadate();
-   $('#pick-date').click();
+   $('#pick-date').pickadate({
+      min: new Date(),
+      //disabled: []
+   });
+   $('#pick-date').trigger("click");
 });

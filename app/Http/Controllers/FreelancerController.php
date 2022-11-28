@@ -77,6 +77,7 @@ class FreelancerController extends Controller
         $freelancer = Freelancer::where('id',$id)
             ->first();
         $freelancer->load('skills','slots');
+
         return view('freelancer.show',['freelancer' => $freelancer]);
     }
 

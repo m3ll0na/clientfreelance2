@@ -14,7 +14,7 @@ class Freelancer extends Model
     use HasFactory;
 
     public function skills(){
-        return $this->belongsToMany(Skill::class, 'freelancer_skills', 'freelancer_id', 'skill_id')->withPivot("description","rate");
+        return $this->belongsToMany(Skill::class, 'freelancer_skills', 'freelancer_id', 'skill_id')->withPivot("id","description","rate");
     }
 
     public function slots(){

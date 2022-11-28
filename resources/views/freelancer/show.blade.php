@@ -60,6 +60,40 @@
 <!--Freelancer Field-->
 
       <div class="col-lg-8">
+                <div class="row">
+          <div class="col-md-14">
+                    <div class="card mb-4">
+           <div class="card-body">
+            <table class="table">
+                  <thead>
+                    <h5>Skills To Book</h5>
+                    <tr>
+                      <th scope="col">Skill</th>
+                      <th scope="col">Rate</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($freelancer->skills as $skill)
+                    <tr>
+                      <th scope="row">{{ $skill->description }}</th>
+                      <td>RM{{$skill->pivot->rate}}/hour</td>
+                      <td>
+                          <form method="GET" action="/freelancerslot">
+                            <input type="hidden" name="freelancerSkill" value="{{ $skill->pivot->id }}" />
+                            <input type="submit" class="btn btn-primary me-md-2" value="Book Now">
+                          </form>
+                      </td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+                  <a href="/freelancerslot"> <button class="btn btn-success me-md-2" type="button">Call</button></a>
+                </div>
+            </div>
+        </div>
         <div class="card mb-4">
           <div class="card-body">
             <div class="row">
@@ -130,8 +164,7 @@
 
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-14">
+
             <div class="card mb-4 mb-md-0">
               <div class="card-body">
                 <table class="table">
@@ -162,11 +195,6 @@
 
 
 <!--Call or book-->
-
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <a href="#"></a><button class="btn btn-outline-primary" type="button">Call</button>
-                  <a href="/freelancerslot" <button class="btn btn-primary me-md-2" type="button">Book</button></a>
-                </div>
 
                 </div>
               </div>

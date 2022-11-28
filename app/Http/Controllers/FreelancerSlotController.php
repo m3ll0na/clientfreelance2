@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Http\Controllers\FreelancerSlotController;
 use App\Models\FreelancerSlot;
+use App\Models\Freelancer;
+use App\Models\Skill;
+use Illuminate\Database\Eloquent\Builder;
 
 class FreelancerSlotController extends Controller
 {
@@ -14,10 +17,23 @@ class FreelancerSlotController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $freelancerslot = FreelancerSlot::get();
-        return view('freelancerslot.index',compact('freelancerslot'));
+        $freelancerSkillId = $request->query("freelancerSkill");
+
+        $freelancer = Freelancer::whereHas('skills', function (Builder $query) use ($freelancerSkillId) {
+            $query->where('freelancer_skills.id',$freelancerSkillId);
+        })->first();
+        
+        $skill = Skill::whereHas('freelancers', function (Builder $query) use ($freelancerSkillId) {
+            $query->where('freelancer_skills.id',$freelancerSkillId);
+        })->first();
+        
+        return view('freelancerslot.index',[
+            "freelancer" => $freelancer,
+            "skill" => $skill,
+            "freelancerSkillId" => $freelancerSkillId
+        ]);
     }
 
     /**
