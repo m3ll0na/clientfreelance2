@@ -16,8 +16,21 @@ class FreelancerSlotController extends Controller
      */
     public function index()
     {
-        $freelancerslot = FreelancerSlot::get();
-        return view('freelancerslot.index',compact('freelancerslot'));
+        $freelancerSkillId = $request->query("freelancerSkill");
+
+        $freelancer = Freelancer::whereHas('skills', function (Builder $query) use ($freelancerSkillId) {
+            $query->where('freelancer_skills.id',$freelancerSkillId);
+        })->first();
+        
+        $skill = Skill::whereHas('freelancers', function (Builder $query) use ($freelancerSkillId) {
+            $query->where('freelancer_skills.id',$freelancerSkillId);
+        })->first();
+        
+        return view('freelancerslot.index',[
+            "freelancer" => $freelancer,
+            "skill" => $skill,
+            "freelancerSkillId" => $freelancerSkillId,
+        ]);
     }
 
     /**

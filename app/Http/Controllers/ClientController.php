@@ -17,7 +17,28 @@ class ClientController extends Controller
     public function index()
     {
         $client = Client::get();
-        return view('client.index',compact('client'));
+        $freelancerSkillId = $request->freelancerSkillId;
+        $bookingDate = $request->bookingDate;
+        $slotTime = $request->slotTime;
+
+        $freelancerSkillId = $request->freelancerSkillId;
+        $skill = Skill::whereHas('freelancers', function (Builder $query) use ($freelancerSkillId) {
+            $query->where('freelancer_skills.id',$freelancerSkillId);
+        })->first();
+
+        $freelancer = Freelancer::whereHas('skills', function (Builder $query) use ($freelancerSkillId) {
+            $query->where('freelancer_skills.id',$freelancerSkillId);
+        })->first();
+
+
+        return view('client.index',[
+            "client" => $client,
+            "freelancerSkillId" => $freelancerSkillId,
+            "bookingDate" => $bookingDate,
+            "slotTime" => $slotTime,
+            "skill" =>  $skill,
+            "freelancer" => $freelancer
+        ]);
     }
 
     /**
