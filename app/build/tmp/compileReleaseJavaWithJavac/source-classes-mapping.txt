@@ -1,0 +1,8 @@
+com/amazonaws/elb/ap_southeast_1/proffilix_2113527495/twa/DelegationService.java
+ com.amazonaws.elb.ap_southeast_1.proffilix_2113527495.twa.DelegationService
+com/amazonaws/elb/ap_southeast_1/proffilix_2113527495/twa/BuildConfig.java
+ com.amazonaws.elb.ap_southeast_1.proffilix_2113527495.twa.BuildConfig
+com/amazonaws/elb/ap_southeast_1/proffilix_2113527495/twa/LauncherActivity.java
+ com.amazonaws.elb.ap_southeast_1.proffilix_2113527495.twa.LauncherActivity
+com/amazonaws/elb/ap_southeast_1/proffilix_2113527495/twa/Application.java
+ com.amazonaws.elb.ap_southeast_1.proffilix_2113527495.twa.Application
