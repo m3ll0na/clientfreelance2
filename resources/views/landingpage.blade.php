@@ -74,8 +74,8 @@
             <img src="img/banner1.png" class="d-block w-100" alt="...">
             <div class="carousel-caption">
                 <h5>Current User?</h5>
-                                <h1><p>Enjoy 5% rebate, use code NOV22 upon checkout</p>
-                                <p>Ends 30 Nov 2022</h1></p>
+                                <h1><p>Enjoy 5% rebate, use code DEC22 upon checkout</p>
+                                <p>Ends 31 Dec 2022</h1></p>
                                 <p><a href="/freelancerskill/search" class="btn btn-info mt-3">Use Now</a></p>
             </div>
             </div>
@@ -135,7 +135,7 @@
                     </div>
                 </div>
                 <div class="row">
-                  <div class="col-8 col-md-12 col-lg-4">
+                  <div class="col-12 col-md-12 col-lg-4">
                       <div class="card text-dark text-center bg-warning pb-2">
                           <div class="card-body">
                             <i class="bi bi-bookmarks-fill"></i>
@@ -146,7 +146,7 @@
                       </div>
                   </div>
 
-                    <div class="col-8 col-md-12 col-lg-4">
+                    <div class="col-12 col-md-12 col-lg-4">
                         <div class="card text-dark text-center bg-warning pb-2">
                             <div class="card-body">
                                 <i class="bi bi-bookmark-star-fill"></i>
@@ -336,7 +336,7 @@
                         <div class="card-body">
                             <i class="bi bi-bookmark-star-fill"></i>
                             <h3 class="card-title">Pro<br>RM45</h3>
-                            <p class="lead">-Unlimited freelancer booking<br>-View booking history<br>-Counter offer feature<br>-Milestone Payment System</p>
+                            <p class="lead">-Unlimited freelancer<br>booking<br>-View booking history<br>-Counter offer feature<br>-Milestone Payment System</p>
                         </div>
                     </div>
                 </div>
@@ -400,15 +400,6 @@
       </footer>
       <!-- footer ends -->
 
-
-
-
-
-
-
-
-    
-    
     <!-- All Js -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
