@@ -1,7 +1,8 @@
 @extends('layouts.navbar')
 
-<section style="background-color: #eee;">
+
   <br>
+  
   <div class="container py-5">
     <div class="row">
       <div class="col">
