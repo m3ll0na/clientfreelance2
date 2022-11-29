@@ -29,6 +29,12 @@ class FreelancerController extends Controller
         return view('freelancer.index',['freelancers' => $freelancers]);
     }
 
+    public function oldindex()
+    {
+        $freelancer = Freelancer::get();
+        return view('freelancer.oldindex',compact('freelancer'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -49,7 +55,7 @@ class FreelancerController extends Controller
     {
         $data = new Freelancer;
         $data->name = $request->name;
-        $data->profile_image = $request->profile_image;
+        $data->photo = $request->photo;
         $data->description = $request->description;
         $data->address = $request->address;
         $data->email = $request->email;
@@ -59,10 +65,22 @@ class FreelancerController extends Controller
         $data->hourlyWage = $request->hourlyWage;
         $data->id = $request->id;
 
-        $data->profile_image = $request->profile_image;
+        $photo = null;
+
+        if($request->hasFile('photo')){
+            $file = $request->file('photo');
+            $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
+            $file->move(public_path().'/freelancer_photo',$name);
+            $photo = $name; 
+        }else{
+            $photo = $request->photo;
+        }
+
+        $data->photo=$photo;
+
 
         $data ->save();
-        return redirect()->route('freelancer')->with('Success', 'Freelancer has been updated successfully.');
+        return redirect()->route('freelancer')->with('success', 'Freelancer added');
     }
 
     /**
@@ -104,7 +122,7 @@ class FreelancerController extends Controller
     {
         $data = Freelancer::find($id);
         $data->name = $request->name;
-        $data->profile_image = $request->profile_image;
+        $data->photo = $request->photo;
         $data->description = $request->description;
         $data->address = $request->address;
         $data->email = $request->email;
@@ -114,8 +132,22 @@ class FreelancerController extends Controller
         $data->hourlyWage = $request->hourlyWage;
         $data->id = $request->id;
 
+        $photo = null;
+
+        if($request->hasFile('photo')){
+            $file = $request->file('photo');
+            $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
+            $file->move(public_path().'/freelancer_photo',$name);
+            $photo = $name; 
+        }else{
+            $photo = $request->photo;
+        }
+
+        $data->photo =$photo;
+
+
         $data ->save();
-        return redirect()->route('freelancer')->with('Success', 'Freelancer has been updated successfully.');
+        return redirect()->route('freelancer')->with('success', 'Freelancer added');
     }
 
     /**
